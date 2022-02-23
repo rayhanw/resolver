@@ -9,7 +9,7 @@ SimpleForm.setup do |config|
   config.boolean_label_class = ''
 
   # How the label text should be generated altogether with the required text.
-  config.label_text = lambda { |label, required, explicit_label| "#{label} #{required}" }
+  config.label_text = lambda { |label, required, explicit_label| label }
 
   # Define the way to render check boxes / radio buttons with labels.
   config.boolean_style = :inline
@@ -38,7 +38,7 @@ SimpleForm.setup do |config|
   # vertical forms
   #
   # vertical default_wrapper
-  config.wrappers :vertical_form, tag: 'div', class: 'mb-4' do |b|
+  config.wrappers :vertical_form, tag: 'div', class: 'mb-8' do |b|
     b.use :html5
     b.use :placeholder
     b.optional :maxlength
@@ -46,7 +46,7 @@ SimpleForm.setup do |config|
     b.optional :pattern
     b.optional :min_max
     b.optional :readonly
-    b.use :label, class: 'block', error_class: 'text-red-500'
+    b.use :label, class: 'block', error_class: ''
     b.use :input,
           class: 'block
                   w-full
@@ -64,7 +64,7 @@ SimpleForm.setup do |config|
                   focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none',
           error_class: 'border-red-500',
           valid_class: 'border-green-400'
-    b.use :full_error, wrap_with: { tag: 'p', class: 'mt-2 text-red-500 text-xs italic' }
+    b.use :full_error, wrap_with: { tag: 'p', class: 'mt-2 text-red-500 text-sm italic' }
     b.use :hint, wrap_with: { tag: 'p', class: 'mt-2 text-grey-700 text-xs italic' }
   end
 

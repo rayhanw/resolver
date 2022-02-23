@@ -10,9 +10,13 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Roboto", ...defaultTheme.fontFamily.sans],
+        code: ["Fira Code", "Roboto", ...defaultTheme.fontFamily.sans],
       },
       colors: {
         black: "rgba(42, 42, 42, 1)",
+        gray: {
+          custom: "#3C3C3C",
+        },
       },
     },
   },
