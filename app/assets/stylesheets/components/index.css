@@ -1,1 +1,6 @@
 @import "./input.css";
+
+pre {
+  white-space: pre-wrap;
+  word-break: keep-all;
+}
