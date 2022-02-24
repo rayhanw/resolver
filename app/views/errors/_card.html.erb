@@ -12,6 +12,8 @@
 
   <div>
     <h3 class="text-white font-bold text-xl">Solution</h3>
-    <%= error.solution %>
+    <div class="text-white font-code rounded" data-controller="syntax-highlighter">
+      <%= error.solution_converted.html_safe %>
+    </div>
   </div>
 </div>
