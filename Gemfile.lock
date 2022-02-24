@@ -70,6 +70,7 @@ GEM
     bootsnap (1.10.3)
       msgpack (~> 1.2)
     builder (3.2.4)
+    commonmarker (0.23.2)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
     debug (1.4.0)
@@ -80,6 +81,9 @@ GEM
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    html-pipeline (2.14.0)
+      activesupport (>= 2)
+      nokogiri (>= 1.4)
     i18n (1.10.0)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.1)
@@ -205,7 +209,9 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  commonmarker (~> 0.16)
   debug
+  html-pipeline
   image_processing (~> 1.2)
   importmap-rails
   pg (~> 1.1)
