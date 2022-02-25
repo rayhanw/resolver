@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @errors = Error.first(5)
+    @errors = Error.random
 
     if params[:query]
       # Do something
