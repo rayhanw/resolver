@@ -9,7 +9,6 @@ COPY Gemfile.lock /app/Gemfile.lock
 
 RUN bundle install
 
-ENTRYPOINT ["bin/rails"]
-CMD ["s", "-b", "0.0.0.0"]
+ENTRYPOINT ["./bin/entrypoint.sh"]
 
 EXPOSE 3000
