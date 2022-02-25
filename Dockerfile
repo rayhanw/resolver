@@ -7,7 +7,6 @@ WORKDIR /app
 COPY Gemfile /app/Gemfile
 COPY Gemfile.lock /app/Gemfile.lock
 
-RUN gem install foreman
 RUN bundle install
 
 ENTRYPOINT ["./bin/entrypoint.sh"]
