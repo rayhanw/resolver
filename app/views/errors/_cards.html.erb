@@ -1,6 +1,6 @@
 <div class="lg:mx-36">
   <% @errors.each do |error| %>
-    <div class="rounded bg-gray-custom p-8">
+    <div class="rounded bg-gray-custom p-8 mb-8">
       <h1 class="text-white font-bold text-4xl">
         <%= link_to error_path(error), class: "hover:text-gray-300 transition-all duration-200" do %>
           <code class="font-code"><%= error.title %></code>

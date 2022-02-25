@@ -20,3 +20,8 @@
 code {
   border-radius: 0.25em;
 }
+
+pre {
+  white-space: pre-wrap;
+  word-break: keep-all;
+}
