@@ -9,6 +9,6 @@ COPY Gemfile.lock /app/Gemfile.lock
 
 RUN bundle install
 
-CMD ["bin/rails", "s", "-b", "0.0.0.0"]
+CMD ["rails", "s", "-b", "0.0.0.0"]
 
 EXPOSE 3000
