@@ -9,7 +9,4 @@ COPY Gemfile.lock /app/Gemfile.lock
 
 RUN bundle install
 
-ENTRYPOINT ["rails"]
-CMD ["server", "-b", "0.0.0.0"]
-
 EXPOSE 3000
