@@ -16,6 +16,7 @@ module.exports = {
         black: "rgba(42, 42, 42, 1)",
         gray: {
           custom: "#3C3C3C",
+          light: "#F1FAEE",
         },
       },
     },
