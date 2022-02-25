@@ -5,5 +5,11 @@
     <input type="text" name="query" id="error_query" class="block w-full pl-10 pr-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="undefined method ...">
   </form>
 
-  <%= render partial: "errors/cards", locals: { errors: @errors } %>
+  <% if @errors.empty? %>
+    <h3 class="font-bold text-2xl text-white">
+      Don't see your error listed? (<%= link_to "contribute here", "https://github.com/rayhanw/resolver/issues/news", target: :_blank, class: "underline hover:text-gray-300 transition-all duration-200" %>)
+    </h3>
+  <% else %>
+    <%= render partial: "errors/cards", locals: { errors: @errors } %>
+  <% end %>
 </div>
