@@ -6,7 +6,10 @@
           <%= link_to error_path(error), class: "hover:text-gray-300 transition-all duration-200" do %>
             <code class="font-code"><%= error.title %></code>
           <% end %>
-          <p class="text-base font-normal"><%= error.votes %>👍</p>
+          <div class="text-base font-normal flex">
+            <span class="mr-1"><%= error.votes %></span>
+            <span>👍</span>
+          </div>
         </div>
       </h1>
 

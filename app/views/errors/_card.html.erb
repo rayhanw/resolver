@@ -2,7 +2,10 @@
   <h1 class="text-white font-bold text-4xl">
     <div class="flex justify-between items-center">
       <code class="font-code"><%= error.title %></code>
-      <p class="text-base font-normal"><%= error.votes %>👍</p>
+      <div class="text-base font-normal">
+        <span class="mr-1"><%= error.votes %></span>
+        <span>👍</span>
+      </div>
     </div>
   </h1>
 
