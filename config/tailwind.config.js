@@ -26,10 +26,5 @@ module.exports = {
 		require("@tailwindcss/forms"),
 		require("@tailwindcss/aspect-ratio"),
 		require("@tailwindcss/typography")
-	],
-	purge: [
-		"./app/**/*.html.erb",
-		"./app/helpers/**/*.rb",
-		"./app/javascript/**/*.js"
 	]
 };
