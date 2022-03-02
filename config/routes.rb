@@ -3,5 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
   root "pages#home"
 
-  resources :errors, only: %i[show new create]
+  resources :errors, only: %i[show new create] do
+    member do
+      patch "/upvote", to: "errors#upvote"
+    end
+  end
 end
