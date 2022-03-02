@@ -11,6 +11,7 @@ services:
     tty: true
     environment:
       - DATABASE_URL=postgres://postgres:password@db
+      - RAILS_LOG_TO_STDOUT=enabled
     depends_on:
       - db
 
