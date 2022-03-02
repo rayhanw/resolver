@@ -2,9 +2,12 @@
   <% @errors.each do |error| %>
     <div class="rounded bg-gray-custom p-8 mb-8">
       <h1 class="text-white font-bold text-4xl">
-        <%= link_to error_path(error), class: "hover:text-gray-300 transition-all duration-200" do %>
-          <code class="font-code"><%= error.title %></code>
-        <% end %>
+        <div class="flex justify-between items-center">
+          <%= link_to error_path(error), class: "hover:text-gray-300 transition-all duration-200" do %>
+            <code class="font-code"><%= error.title %></code>
+          <% end %>
+          <p class="text-base font-normal"><%= error.votes %>👍</p>
+        </div>
       </h1>
 
       <div class="my-6">
