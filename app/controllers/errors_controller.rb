@@ -20,6 +20,18 @@ class ErrorsController < ApplicationController
     end
   end
 
+  def upvote
+    @error = Error.find(params[:id])
+    @error.upvote!
+
+    if @error.save
+      flash[:notice] = "Thank you for your contribution!"
+      redirect_to error_path(@error)
+    else
+      render :show
+    end
+  end
+
   private
 
   def error_params
