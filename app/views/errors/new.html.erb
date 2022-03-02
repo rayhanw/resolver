@@ -3,7 +3,15 @@
   <%= simple_form_for @error, data: { turbo: false } do |f| %>
     <%= f.input :title, wrapper_html: { class: "mt-8" }, label_html: { class: "text-lg" } %>
     <%= f.input :details, label_html: { class: "text-lg" } %>
-    <%= f.input :solution, as: :rich_text_area, label_html: { class: "text-lg" } %>
+    <div data-controller="preview-text-editor">
+      <%= f.input :solution, as: :rich_text_area, label_html: { class: "text-lg" }, input_html: { data: { preview_text_editor_target: "editor", action: "trix-blur->preview-text-editor#fillIn" } } %>
+      <div>
+        <pre lang="rb">
+          <code data-preview-text-editor-target="preview" class="w-full">
+          </code>
+        </pre>
+      </div>
+    </div>
     <%= f.submit "Submit", class: "bg-white rounded text-black px-12 py-2 cursor-pointer hover:bg-gray-300 transition-all duration-200" %>
   <% end %>
 </div>
