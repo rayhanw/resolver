@@ -1,16 +1,22 @@
-<div class="text-white">
+<div class="text-white w-full">
   <h1 class="text-center font-bold text-4xl">Add a new resolver</h1>
   <%= simple_form_for @error, data: { turbo: false } do |f| %>
     <%= f.input :title, wrapper_html: { class: "mt-8" }, label_html: { class: "text-lg" } %>
-    <%= f.input :details, label_html: { class: "text-lg" } %>
-    <div data-controller="preview-text-editor">
-      <%= f.input :solution, as: :rich_text_area, label_html: { class: "text-lg" }, input_html: { data: { preview_text_editor_target: "editor", action: "trix-blur->preview-text-editor#fillIn" } } %>
-      <div>
-        <pre lang="rb">
-          <code data-preview-text-editor-target="preview" class="w-full">
-          </code>
-        </pre>
-      </div>
+    <%= f.input :details, wrapper_html: { class: "mt-8" }, label_html: { class: "text-lg" } %>
+    <div class="mb-8" id="preview" data-controller="preview-text-editor">
+      <%= f.input :resolver,
+                  input_html: {
+                    data: {
+                      preview_text_editor_target: "editor",
+                      action: "change->preview-text-editor#fillIn"
+                    },
+                    rows: 10
+                  },
+                  wrapper_html: { class: "mt-8" },
+                  label_html: { class: "text-lg" },
+                  label: "Solution (Markdown is available)" %>
+      <p class="font-medium text-white text-lg">Solution Preview</p>
+      <div data-preview-text-editor-target="preview"></div>
     </div>
     <%= f.submit "Submit", class: "bg-white rounded text-black px-12 py-2 cursor-pointer hover:bg-gray-300 transition-all duration-200" %>
   <% end %>
