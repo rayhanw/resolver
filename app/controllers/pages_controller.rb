@@ -8,5 +8,7 @@ class PagesController < ApplicationController
     else
       @errors = Error.random
     end
+
+    @errors = @errors.order(votes: :DESC)
   end
 end
