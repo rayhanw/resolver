@@ -1,4 +1,7 @@
 class ErrorsController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[show]
+  before_action :is_admin!, only: %i[new create]
+
   def show
     @error = Error.find(params[:id])
   end
