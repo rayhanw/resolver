@@ -20,6 +20,6 @@ class ErrorsController < ApplicationController
   private
 
   def error_params
-    params.require(:error).permit(:title, :details, :solution)
+    params.require(:error).permit(:title, :details, :resolver)
   end
 end
