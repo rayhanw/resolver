@@ -14,14 +14,19 @@
  *= require_self
  */
 
+@import "fonts.css";
 @import "components/index.css";
 @import "themes/index.css";
 
 code {
-  border-radius: 0.25em;
+	border-radius: 0.25em;
 }
 
 pre {
-  white-space: pre-wrap;
-  word-break: keep-all;
+	white-space: pre-wrap;
+	word-break: keep-all;
+}
+
+pre * {
+	font-family: "Fira Code" !important;
 }
