@@ -1,4 +1,7 @@
 <nav class="bg-gray-custom text-gray-light py-4 px-8 md:px-40 lg:px-96 flex justify-between">
-  <%= link_to "Home", root_path %>
-  <%= link_to "Contribute", "https://github.com/rayhanw/resolver/issues/new", target: :_blank %>
+  <%= link_to "Home", root_path, class: "text-gray-light underline hover:text-gray-200 transition-all duration-200" %>
+  <% if user_signed_in? && current_user.admin? %>
+    <%= link_to "Add error", new_error_path, class: "text-gray-light underline hover:text-gray-200 transition-all duration-200" %>
+  <% end %>
+  <%= link_to "Contribute", "https://github.com/rayhanw/resolver/issues/new", target: :_blank, class: "text-gray-light underline hover:text-gray-200 transition-all duration-200" %>
 </nav>
