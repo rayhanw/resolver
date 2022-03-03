@@ -3,6 +3,8 @@ class Error < ApplicationRecord
 
   validates :title, :details, presence: true
 
+  scope :by_most_popular, -> { order(votes: :DESC) }
+
   def solution_converted
     @solution_converted ||= pipeline.call(solution.to_plain_text)[:output].to_s
   end

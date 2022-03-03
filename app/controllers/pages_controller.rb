@@ -4,9 +4,9 @@ class PagesController < ApplicationController
   def home
     if params[:query] && params[:query] != ""
       sql_query = "errors.title @@ :query OR errors.details @@ :query"
-      @errors = Error.where(sql_query, query: params[:query]).order(votes: :DESC)
+      @errors = Error.where(sql_query, query: params[:query]).by_most_popular
     else
-      @errors = Error.random.order(votes: :DESC)
+      @errors = Error.by_most_popular
     end
   end
 end
