@@ -1,17 +1,17 @@
 @font-face {
-	font-family: "Roboto";
-	src: asset-url("Roboto-Regular.ttf");
-	font-weight: normal;
+  font-family: "Roboto";
+  src: asset-url("Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
 }
 
 @font-face {
-	font-family: "Roboto";
-	src: asset-url("Roboto-Bold.ttf");
-	font-weight: bold;
+  font-family: "Roboto";
+  src: asset-url("Roboto-Bold.ttf") format("truetype");
+  font-weight: bold;
 }
 
 @font-face {
-	font-family: "Fira Code";
-	src: asset-url("FiraCode-Regular.ttf");
-	font-weight: normal;
+  font-family: "Fira Code";
+  src: asset-url("FiraCode-Regular.ttf") format("truetype");
+  font-weight: normal;
 }
