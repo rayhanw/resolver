@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+file = YAML.load_file(Rails.root.join("db", "data", "errors.yml"))
+
+p file
