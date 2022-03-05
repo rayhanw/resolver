@@ -8,4 +8,17 @@ module LinksHelper
       website: "https://rayhanw.com"
     }
   end
+
+  def socials
+    [
+      {
+        text: "Github",
+        url: "https://github.com/rayhanw"
+      },
+      {
+        text: "Website",
+        url: "https://rayhanw.com"
+      }
+    ]
+  end
 end

@@ -9,4 +9,6 @@ class PagesController < ApplicationController
       @errors = Error.by_most_popular
     end
   end
+
+  def about; end
 end
