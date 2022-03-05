@@ -6,3 +6,9 @@ w:
 
 seed:
 	docker-compose run web db:seed
+
+s:
+	docker-compose -f docker-compose.dev.yml up
+
+build:
+	./bin/entrypoint.dev.sh
