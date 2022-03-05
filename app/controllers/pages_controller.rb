@@ -3,8 +3,7 @@ class PagesController < ApplicationController
 
   def home
     if params[:query] && params[:query] != ""
-      sql_query = "errors.title @@ :query OR errors.details @@ :query"
-      @errors = Error.where(sql_query, query: params[:query]).by_most_popular
+      @errors = Error.search_by_keyword(params[:query]).by_most_popular
     else
       @errors = Error.by_most_popular
     end
