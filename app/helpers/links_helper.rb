@@ -1,9 +1,11 @@
-module GithubHelper
-  def gh_links
+module LinksHelper
+  def links
     {
       error: "https://github.com/rayhanw/resolver/issues/new?assignees=rayhanw&labels=enhancement&template=resolver-request.md&title=",
       bug: "https://github.com/rayhanw/resolver/issues/new?assignees=rayhanw&labels=bug&template=bug_report.md&title=",
-      codebase: "https://github.com/rayhanw/resolver"
+      codebase: "https://github.com/rayhanw/resolver",
+      avatar: "https://avatars.githubusercontent.com/u/20383179?v=4",
+      website: "https://rayhanw.com"
     }
   end
 end

@@ -3,5 +3,5 @@
   <% if user_signed_in? && current_user.admin? %>
     <%= link_to "Add error", new_error_path, class: "text-gray-light underline hover:text-gray-200 transition-all duration-200" %>
   <% end %>
-  <%= link_to "Contribute", gh_links[:error], target: :_blank, class: "text-gray-light underline hover:text-gray-200 transition-all duration-200" %>
+  <%= link_to "Contribute", links[:error], target: :_blank, class: "text-gray-light underline hover:text-gray-200 transition-all duration-200" %>
 </nav>
