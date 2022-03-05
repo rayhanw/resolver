@@ -34,3 +34,23 @@
       @restaurants = Restaurant.all
     end
     ```
+
+- title: undefined method `assert_valid_keys' for true:TrueClass
+  details: Using `pg_search`'s `tsearch` feature and the error happens when you try to use the method you created with `pg_search_scope`
+  resolver: |
+    Make sure the value of `tsearch` entry is a `Hash` that contains a `prefix` with the value of `true`
+    ###### In restaurant.rb
+    ```rb
+    class Restaurant < ApplicationRecord
+      # [...]
+      include PgSearch::Model
+
+      pg_search_scope :search_by_keyword,
+                      against: [:name, :location],
+                      using: {
+                        tsearch: { prefix: true }
+                      }
+                      #          ^^^^^^^^^^^^^^^^
+      # [...]
+    end
+    ```
