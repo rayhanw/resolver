@@ -1,6 +1,6 @@
 - title: undefined method `model_name` for nil:Class
   details: Error happens on the line of `simple_form_for [@restaurant, @review]`
-  solution: >
+  resolver: |
     ######  In restaurants/show.html.erb
     ```erb
     <%= simple_form_for [@restaurant, @review] do |f| %>
@@ -20,17 +20,17 @@
 
 - title: undefined method `each' for nil:NilClass
   details: Error happens on the line of `@restaurants.each do |restaurant|`
-  solution: >
-  ###### In restaurants/index.html.erb
-  ```erb
-  <% @restaurants.each do |restaurant|
-  ^^^^^^^^^^^^
-  <!-- [...] -->
-  ```
-  ###### In restaurants_controller.rb
-  ```rb
-  # Make sure you have defined the variable `@restaurants`
-  def index
-  @restaurants = Restaurant.all
-  end
-  ```
+  resolver: |
+    ###### In restaurants/index.html.erb
+    ```erb
+    <% @restaurants.each do |restaurant|
+    ^^^^^^^^^^^^
+    <!-- [...] -->
+    ```
+    ###### In restaurants_controller.rb
+    ```rb
+    # Make sure you have defined the variable `@restaurants`
+    def index
+      @restaurants = Restaurant.all
+    end
+    ```
