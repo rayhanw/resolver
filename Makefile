@@ -12,3 +12,6 @@ s:
 
 build:
 	./bin/entrypoint.dev.sh
+
+migrate:
+	docker-compose run web db:migrate
