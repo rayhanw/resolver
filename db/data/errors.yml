@@ -54,3 +54,49 @@
       # [...]
     end
     ```
+
+- title: Images aren't uploading when using Cloudinary & ActiveStorage
+  details: If you run into a problem of images not being uploaded to the service provider (e.g. Cloudinary), double check the setup. Make sure you finish all the config.
+  resolver: |
+    ###### In config/storage.yml
+    ```rb
+    # Make sure you've defined the service you're using (e.g. Cloudinary)
+    cloudinary:
+      service: Cloudinary
+      folder: <%= Rails.env %> # OPTIONAL - This is done to separate DEVELOPMENT and PRODUCTION environments pictures
+    ```
+
+    ###### In config/environments/development.rb (For your own laptop/localhost environment)
+    ###### You'll want to change the following also in config/environments/production.rb (For development environment [Heroku])
+    ```rb
+    # [...]
+    # Find the line that says `config.active_storage.service = :local`.
+    # Replace the value with `:cloudinary` (without the backtick)
+    # If the line does not exist, then add the next line (within the block or before the `end`)
+    config.active_storage.service = :cloudinary
+    # [...]
+    ```
+
+    ###### In the model [`restaurant.rb`]
+    ```rb
+    class Restaurant < ApplicationRecord
+      # [...]
+      has_one_attached :photo
+      # [...]
+    end
+    ```
+
+    ###### In the controller [`/controllers/restaurants_controller.rb`]
+    ```rb
+    # Ensure that you've added :photo (or photos: [] -> at the end) to the strong params
+    class RestaurantsController < ApplicationController
+    # [...]
+    private
+
+    def restaurant_params
+      params.require(:restaurant).permit(:name, :location, :photo)
+      # params.require(:restaurant).permit(:name, :location, photos: []) -> If using `has_many_attached :photos`
+    end
+    # [...]
+    end
+    ```
