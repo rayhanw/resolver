@@ -72,6 +72,6 @@ group :development do
 end
 
 gem "html-pipeline"
-gem 'commonmarker', '~> 0.16', require: false
+gem 'commonmarker', '~> 0.23', require: false
 gem 'devise'
 gem 'pg_search', '~> 2.3.0'
