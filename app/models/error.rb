@@ -1,8 +1,6 @@
 class Error < ApplicationRecord
   include PgSearch::Model
 
-  has_rich_text :solution
-
   validates :title, :details, presence: true
 
   pg_search_scope :search_by_keyword,
