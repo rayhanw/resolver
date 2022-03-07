@@ -1,4 +1,4 @@
-- title: undefined method `model_name` for nil:Class
+- title: undefined method `model_name` for nil:NilClass
   details: Error happens on the line of `simple_form_for [@restaurant, @review]`
   resolver: |
     ######  In restaurants/show.html.erb
@@ -61,12 +61,15 @@
     ###### In config/storage.yml
     ```rb
     # Make sure you've defined the service you're using (e.g. Cloudinary)
+    # ⚠️ Be careful of the indentation, YML files are sensitive to it
     cloudinary:
       service: Cloudinary
       folder: <%= Rails.env %> # OPTIONAL - This is done to separate DEVELOPMENT and PRODUCTION environments pictures
     ```
 
     ###### In config/environments/development.rb (For your own laptop/localhost environment)
+
+
     ###### You'll want to change the following also in config/environments/production.rb (For development environment [Heroku])
     ```rb
     # [...]
@@ -77,6 +80,7 @@
     # [...]
     ```
 
+
     ###### In the model [`restaurant.rb`]
     ```rb
     class Restaurant < ApplicationRecord
@@ -86,17 +90,18 @@
     end
     ```
 
+
     ###### In the controller [`/controllers/restaurants_controller.rb`]
     ```rb
     # Ensure that you've added :photo (or photos: [] -> at the end) to the strong params
     class RestaurantsController < ApplicationController
-    # [...]
-    private
+      # [...]
+      private
 
-    def restaurant_params
-      params.require(:restaurant).permit(:name, :location, :photo)
-      # params.require(:restaurant).permit(:name, :location, photos: []) -> If using `has_many_attached :photos`
-    end
-    # [...]
+      def restaurant_params
+        params.require(:restaurant).permit(:name, :location, :photo)
+        # params.require(:restaurant).permit(:name, :location, photos: []) -> If using `has_many_attached :photos`
+      end
+      # [...]
     end
     ```
