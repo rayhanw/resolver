@@ -24,3 +24,9 @@ routes:
 
 restart:
 	docker-compose restart web
+
+g:
+	docker-compose run web g $(arg)
+
+d:
+	docker-compose run web d $(arg)
