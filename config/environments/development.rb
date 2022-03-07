@@ -66,4 +66,6 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   config.hosts << /.*.lhrtunnel.link/
+
+  config.web_console.permissions = '172.21.0.1'
 end
