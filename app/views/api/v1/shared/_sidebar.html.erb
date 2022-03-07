@@ -1,4 +1,4 @@
-<aside class="bg-gray-custom text-gray-light py-24 px-12 flex flex-col justify-center h-full text-center">
+<aside class="bg-gray-custom text-gray-light py-24 px-12 flex flex-col justify-center h-full text-center sticky left-0">
   <%= link_to "Home", root_path, class: "text-lg text-gray-light hover:text-gray-200 transition-all duration-200" %>
   <%= link_to "Errors/index", api_v1_errors_path, class: "text-lg text-gray-light #{action_name == "index" && "underline"} hover:text-gray-200 transition-all duration-200 mt-8" %>
   <%= link_to "Errors/show", api_v1_show_api_path, class: "text-lg text-gray-light #{action_name == "show_api" && "underline"} hover:text-gray-200 transition-all duration-200 mt-8" %>
