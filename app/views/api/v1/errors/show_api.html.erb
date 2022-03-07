@@ -1,0 +1,37 @@
+<div class="text-white text-left w-full">
+  <h1 class="font-bold text-4xl mb-8">errors#show</h1>
+
+  <section>
+    <div>
+      <p><i>errors#show</i> is the endpoint show a list a specific error.</p>
+    </div>
+    <div class="mt-4">
+      <h2 class="text-white font-bold text-2xl">Headers (required)</h2>
+      <ul class="font-code">
+        <li>
+          <span><code>Accept</code>:</span>
+          <span><code>application/json</code></span>
+        </li>
+      </ul>
+    </div>
+    <div class="mt-4">
+      <h2 class="text-white font-bold text-2xl">Base URL</h2>
+      <code class="font-code"><%= request.base_url %></code>
+    </div>
+    <div class="mt-4">
+      <h2 class="text-white font-bold text-2xl">Endpoint</h2>
+      <code class="font-code">/api/v1/errors/:id</code>
+    </div>
+    <div class="mt-4">
+      <h2 class="text-white font-bold text-2xl">Response</h2>
+      <pre>
+        <code class="language-json hljs">{
+    "id": 1,
+    "title": "Heroku ...",
+    "details": "Happens on ...",
+    "resolver": "Solution goes here"
+  }</code>
+      </pre>
+    </div>
+  </section>
+</div>
