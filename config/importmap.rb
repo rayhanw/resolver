@@ -5,8 +5,6 @@ pin "@hotwired/turbo-rails", to: "turbo.min.js", preload: true
 pin "@hotwired/stimulus", to: "stimulus.min.js", preload: true
 pin "@hotwired/stimulus-loading", to: "stimulus-loading.js", preload: true
 pin_all_from "app/javascript/controllers", under: "controllers"
-pin "trix"
-pin "@rails/actiontext", to: "actiontext.js"
 pin "highlight.js", to: "https://ga.jspm.io/npm:highlight.js@11.4.0/es/index.js"
 pin "markdown-it", to: "https://ga.jspm.io/npm:markdown-it@12.3.2/index.js"
 pin "entities/lib/maps/entities.json", to: "https://ga.jspm.io/npm:entities@2.1.0/lib/maps/entities.json.js"
