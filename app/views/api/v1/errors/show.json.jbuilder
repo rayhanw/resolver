@@ -1,1 +1,1 @@
-json.extract! @error, :title, :details, :resolver
+json.extract! @error, :id, :title, :details, :resolver
