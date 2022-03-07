@@ -15,4 +15,6 @@ Rails.application.routes.draw do
       patch "/upvote", to: "errors#upvote"
     end
   end
+
+  get "/docs", to: "pages#docs"
 end
