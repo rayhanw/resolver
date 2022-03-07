@@ -18,3 +18,6 @@ migrate:
 
 test:
 	rspec
+
+routes:
+	docker-compose run web routes
