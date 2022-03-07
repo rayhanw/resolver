@@ -21,3 +21,6 @@ test:
 
 routes:
 	docker-compose run web routes
+
+restart:
+	docker-compose restart web
