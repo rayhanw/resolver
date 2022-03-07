@@ -1,0 +1,11 @@
+<div class="w-full">
+  <h1 class="font-bold text-4xl text-center mb-8 text-white">API Documentation</h1>
+
+  <section class="text-white mb-28">
+    <ul>
+      <% @routes.each do |route| %>
+        <li><%= link_to route[:text], route[:url], class: "text-gray-light underline hover:text-gray-200 transition-all duration-200" %> <span class="font-code">-></span> <%= route[:details] %></li>
+      <% end %>
+    </ul>
+  </section>
+</div>

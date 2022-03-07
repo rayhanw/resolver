@@ -11,5 +11,18 @@ class PagesController < ApplicationController
 
   def about; end
 
-  def docs; end
+  def docs
+    @routes = [
+      {
+        text: "errors/index",
+        url: api_v1_errors_path,
+        details: "Endpoint for ALL errors"
+      },
+      {
+        text: "errors/show",
+        url: api_v1_show_api_path,
+        details: "Endpoint for a specific error"
+      }
+    ]
+  end
 end
