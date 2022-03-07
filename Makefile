@@ -15,3 +15,6 @@ build:
 
 migrate:
 	docker-compose run web db:migrate
+
+test:
+	rspec
