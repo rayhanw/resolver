@@ -105,3 +105,13 @@
       # [...]
     end
     ```
+
+- title: Error from first time pushing a new project to Heroku
+  details: When you push a new project to Heroku for the first time and you run into an issue that says 'Your bundle only supports platforms ["arm64-darwin-21"] but your local platform is x86_64-linux'.
+  resolver: |
+    ```sh
+    bundle lock --add-platform x86_64-linux
+    git add .
+    git commit -m "Add x86_64-linux platform for Heroku" # can change to any message you want
+    git push heroku # You probably want to push to Github also
+    ```
