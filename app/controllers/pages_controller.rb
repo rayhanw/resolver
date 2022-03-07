@@ -10,4 +10,6 @@ class PagesController < ApplicationController
   end
 
   def about; end
+
+  def docs; end
 end
