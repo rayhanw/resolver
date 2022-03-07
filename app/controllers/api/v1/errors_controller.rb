@@ -2,18 +2,18 @@ class Api::V1::ErrorsController < Api::V1::BaseController
   def index
     @errors = Error.by_most_popular
     @content = '[
-  &nbsp;&nbsp;{
-    &nbsp;&nbsp;&nbsp;&nbsp;"id": 1,
-    &nbsp;&nbsp;&nbsp;&nbsp;"title": "undefined method nil:NilClass",
-    &nbsp;&nbsp;&nbsp;&nbsp;"details": "Happens on ...",
-    &nbsp;&nbsp;&nbsp;&nbsp;"resolver": "Solution goes here"
-  &nbsp;&nbsp;},
-  &nbsp;&nbsp;{
-    &nbsp;&nbsp;&nbsp;&nbsp;"id": 2,
-    &nbsp;&nbsp;&nbsp;&nbsp;"title": "Heroku ...",
-    &nbsp;&nbsp;&nbsp;&nbsp;"details": "Happens on ...",
-    &nbsp;&nbsp;&nbsp;&nbsp;"resolver": "Solution goes here"
-  &nbsp;&nbsp;}
+  &emsp;{
+    &emsp;&emsp;"id": 1,
+    &emsp;&emsp;"title": "undefined method nil:NilClass",
+    &emsp;&emsp;"details": "Happens on ...",
+    &emsp;&emsp;"resolver": "Solution goes here"
+  &emsp;},
+  &emsp;{
+    &emsp;&emsp;"id": 2,
+    &emsp;&emsp;"title": "Heroku ...",
+    &emsp;&emsp;"details": "Happens on ...",
+    &emsp;&emsp;"resolver": "Solution goes here"
+  &emsp;}
 ]'
   end
 
@@ -22,5 +22,11 @@ class Api::V1::ErrorsController < Api::V1::BaseController
   end
 
   def show_api
+    @content = '{
+      &emsp;"id": 1,
+      &emsp;"title": "Heroku ...",
+      &emsp;"details": "Happens on ...",
+      &emsp;"resolver": "Solution goes here"
+    }'
   end
 end
