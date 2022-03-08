@@ -30,3 +30,9 @@ g:
 
 d:
 	docker-compose run web d $(arg)
+
+build-mac:
+	@echo "Version?"; \
+	read VERSION; \
+	echo "Running: docker buildx build --platform linux/amd64 -t rayhanw/rails-resolver:v$$VERSION ."; \
+	docker buildx build --platform linux/amd64 -t rayhanw/rails-resolver:v$$VERSION .
