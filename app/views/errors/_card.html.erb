@@ -1,7 +1,9 @@
-<div class="rounded bg-gray-custom p-8">
+<div class="rounded bg-gray-custom p-8 mb-8">
   <h1 class="text-white font-bold text-4xl">
     <div class="flex justify-between items-start">
-      <code class="font-code"><%= error.title %></code>
+      <%= link_to error_path(error), class: "hover:text-gray-300 transition-all duration-200" do %>
+        <code class="font-code"><%= error.title %></code>
+      <% end %>
       <div class="text-base font-normal flex">
         <span class="mr-1"><%= error.votes %></span>
         <span>👍</span>

@@ -1,30 +1,7 @@
 <div>
   <% @errors.each do |error| %>
-    <div class="rounded bg-gray-custom p-8 mb-8">
-      <h1 class="text-white font-bold text-4xl">
-        <div class="flex justify-between items-start">
-          <%= link_to error_path(error), class: "hover:text-gray-300 transition-all duration-200" do %>
-            <code class="font-code"><%= error.title %></code>
-          <% end %>
-          <div class="text-base font-normal flex">
-            <span class="mr-1 text-lg"><%= error.votes %></span>
-            <span>👍</span>
-          </div>
-        </div>
-      </h1>
-
-      <div class="my-6">
-        <h2 class="text-white font-bold text-2xl">Details</h2>
-        <p class="text-white">
-          <code class="font-code"><%= error.details %></code>
-        </p>
-      </div>
-
-      <div>
-        <h3 class="text-white font-bold text-xl">Solution</h3>
-        <div class="text-white font-code rounded text-sm" data-controller="syntax-highlighter" data-syntax-highlighter-content-value="<%= error.resolver %>">
-        </div>
-      </div>
-    </div>
+    <%= cache error do %>
+      <%= render "errors/card", error: error %>
+    <% end %>
   <% end %>
 </div>
