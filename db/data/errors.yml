@@ -24,7 +24,7 @@
     ###### In restaurants/index.html.erb
     ```erb
     <% @restaurants.each do |restaurant| %>
-    #  ^^^^^^^^^^^^
+    <%# ^^^^^^^^^^^ %>
     <!-- [...] -->
     ```
     ###### In restaurants_controller.rb
