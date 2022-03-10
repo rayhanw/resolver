@@ -83,8 +83,14 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    diff-lcs (1.5.0)
     digest (3.1.0)
     erubi (1.10.0)
+    factory_bot (6.2.0)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -164,6 +170,10 @@ GEM
       activesupport (= 7.0.2.2)
       bundler (>= 1.15.0)
       railties (= 7.0.2.2)
+    rails-controller-testing (1.0.5)
+      actionpack (>= 5.0.1.rc1)
+      actionview (>= 5.0.1.rc1)
+      activesupport (>= 5.0.1.rc1)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -183,6 +193,23 @@ GEM
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
+    rspec-core (3.11.0)
+      rspec-support (~> 3.11.0)
+    rspec-expectations (3.11.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.11.0)
+    rspec-mocks (3.11.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.11.0)
+    rspec-rails (5.1.1)
+      actionpack (>= 5.2)
+      activesupport (>= 5.2)
+      railties (>= 5.2)
+      rspec-core (~> 3.10)
+      rspec-expectations (~> 3.10)
+      rspec-mocks (~> 3.10)
+      rspec-support (~> 3.10)
+    rspec-support (3.11.0)
     ruby-vips (2.1.4)
       ffi (~> 1.12)
     simple_form (5.1.0)
@@ -236,6 +263,7 @@ DEPENDENCIES
   commonmarker (~> 0.23)
   debug
   devise
+  factory_bot_rails
   html-pipeline
   image_processing (~> 1.12)
   importmap-rails
@@ -244,7 +272,9 @@ DEPENDENCIES
   pg_search (~> 2.3.0)
   puma (~> 5.0)
   rails (~> 7.0.2, >= 7.0.2.2)
+  rails-controller-testing
   redis (~> 4.0)
+  rspec-rails
   simple_form
   simple_form-tailwind
   sprockets-rails

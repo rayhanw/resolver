@@ -1,3 +1,5 @@
+CONTAINER = $(shell docker container ls | grep "bin/rails server" | cut -c1-12)
+
 c:
 	docker-compose run web c
 
@@ -17,7 +19,7 @@ migrate:
 	docker-compose run web db:migrate
 
 test:
-	rspec
+	docker container exec -t $(CONTAINER) rspec -fd
 
 routes:
 	docker-compose run web routes
