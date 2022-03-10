@@ -78,3 +78,4 @@ gem "html-pipeline"
 gem 'commonmarker', '~> 0.23', require: false
 gem 'devise'
 gem 'pg_search', '~> 2.3.0'
+gem 'sitemap_generator'
