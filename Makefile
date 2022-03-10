@@ -33,6 +33,12 @@ g:
 d:
 	docker-compose run web d $(arg)
 
+base:
+	docker container exec -it $(CONTAINER) $(arg)
+
+sitemap:
+	docker-compose run web sitemap:refresh
+
 build-mac:
 	@echo "Version?"; \
 	read VERSION; \
