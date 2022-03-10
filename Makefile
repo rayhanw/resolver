@@ -12,7 +12,7 @@ seed:
 s:
 	docker-compose -f docker-compose.dev.yml up
 
-build:
+up-build:
 	./bin/entrypoint.dev.sh
 
 migrate:
@@ -44,3 +44,9 @@ build-mac:
 	read VERSION; \
 	echo "Running: docker buildx build --platform linux/amd64 -t rayhanw/rails-resolver:v$$VERSION ."; \
 	docker buildx build --platform linux/amd64 -t rayhanw/rails-resolver:v$$VERSION .
+
+build:
+	@echo "Version?"; \
+	read VERSION; \
+	echo "Running: docker build -t rayhanw/rails-resolver:v$$VERSION ."; \
+	docker build -t rayhanw/rails-resolver:v$$VERSION .
