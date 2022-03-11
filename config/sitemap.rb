@@ -1,5 +1,5 @@
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = ENV["DOMAIN"]
+SitemapGenerator::Sitemap.default_host = ENV["DOMAIN"] || "https://resolver.site"
 
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.
