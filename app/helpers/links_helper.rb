@@ -21,4 +21,11 @@ module LinksHelper
       }
     ]
   end
+
+  def website_mail
+    {
+      email: "contact@resolver.site",
+      text: "Mail us"
+    }
+  end
 end
