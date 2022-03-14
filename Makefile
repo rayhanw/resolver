@@ -50,3 +50,6 @@ build:
 	read VERSION; \
 	echo "Running: docker build -t rayhanw/rails-resolver:v$$VERSION ."; \
 	docker build -t rayhanw/rails-resolver:v$$VERSION .
+
+ssh:
+	ssh root@159.223.59.62
