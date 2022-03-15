@@ -16,3 +16,6 @@ pin "uc.micro/categories/Cc/regex", to: "https://ga.jspm.io/npm:uc.micro@1.0.6/c
 pin "uc.micro/categories/P/regex", to: "https://ga.jspm.io/npm:uc.micro@1.0.6/categories/P/regex.js"
 pin "uc.micro/categories/Z/regex", to: "https://ga.jspm.io/npm:uc.micro@1.0.6/categories/Z/regex.js"
 pin "uc.micro/properties/Any/regex", to: "https://ga.jspm.io/npm:uc.micro@1.0.6/properties/Any/regex.js"
+pin "stimulus-use", to: "https://ga.jspm.io/npm:stimulus-use@0.41.0/dist/index.js"
+pin "hotkeys-js", to: "https://ga.jspm.io/npm:hotkeys-js@3.8.7/dist/hotkeys.esm.js"
+pin "stimulus", to: "https://ga.jspm.io/npm:stimulus@2.0.0/dist/stimulus.umd.js"
