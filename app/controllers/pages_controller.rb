@@ -3,19 +3,18 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!
 
   def home
+    @last_error_id = Error.last.id
     if params[:query] && params[:query] != ""
       @errors = Error.search_by_keyword(params[:query]).by_most_popular
     else
       @errors = Error.by_most_popular
     end
 
-    @offset = 0
-
     if params[:offset]
-      @offset += 3
+      @offset = params[:offset]
     end
 
-    @errors = Error.offset(@offset).limit(3)
+    @errors = @errors.offset(@offset).limit(3)
 
     respond_with do |format|
       format.html
