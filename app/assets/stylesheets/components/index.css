@@ -1,7 +1,0 @@
-@import "./input.css";
-@import "./preview.css";
-
-pre {
-  white-space: pre-wrap;
-  word-break: keep-all;
-}
