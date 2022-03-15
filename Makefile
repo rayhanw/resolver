@@ -53,3 +53,9 @@ build:
 
 ssh:
 	ssh root@159.223.59.62
+
+pin:
+	bin/importmap pin $(arg)
+
+unpin:
+	bin/importmap unpin $(arg)
