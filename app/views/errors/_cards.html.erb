@@ -1,7 +1,5 @@
-<div>
-  <% @errors.each do |error| %>
-    <%= cache error do %>
-      <%= render "errors/card", error: error %>
-    <% end %>
+<% errors.each do |error| %>
+  <%= cache error do %>
+    <%= render "errors/card", error: error %>
   <% end %>
-</div>
+<% end %>

@@ -115,3 +115,12 @@
     git commit -m "Add x86_64-linux platform for Heroku" # can change to any message you want
     git push heroku # You probably want to push to Github also
     ```
+
+- title: |
+    "We're sorry, but something went wrong error" on Heroku
+  details: When you push to Heroku, you'll often see this error being displayed. One of the more common problem of this is because you might've forgotten to migrate your DB on Heroku. If this isn't the case, you'll have to do some bug hunting.
+  resolver: |
+    ```sh
+    heroku run rails db:migrate
+    # If DB migration is not the case, run `heroku logs --tail` and find the keyword `FATAL` to see what the problem is
+    ```

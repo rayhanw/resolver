@@ -14,19 +14,54 @@
  *= require_self
  */
 
+/* Config */
 @import "fonts.css";
-@import "components/index.css";
+
+/* Themes */
 @import "themes/index.css";
 
 code {
-	border-radius: 0.25em;
+  border-radius: 0.25em;
 }
 
 pre {
-	white-space: pre-wrap;
-	word-break: keep-all;
+  white-space: pre-wrap;
+  word-break: keep-all;
 }
 
 pre * {
-	font-family: "Fira Code" !important;
+  font-family: "Fira Code" !important;
+}
+
+#preview h1 {
+  font-size: 3.75rem;
+}
+
+#preview h2 {
+  font-size: 3rem;
+}
+
+#preview h3 {
+  font-size: 2.25rem;
+}
+
+#preview h4 {
+  font-size: 1.875rem;
+}
+
+#preview h5 {
+  font-size: 1.5rem;
+}
+
+#preview h6 {
+  font-size: 1.25rem;
+}
+
+[data-controller="syntax-highlighter"] h1,
+[data-controller="syntax-highlighter"] h2,
+[data-controller="syntax-highlighter"] h3,
+[data-controller="syntax-highlighter"] h4,
+[data-controller="syntax-highlighter"] h5,
+[data-controller="syntax-highlighter"] h6 {
+  font-style: italic;
 }
