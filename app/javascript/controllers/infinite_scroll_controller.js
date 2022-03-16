@@ -15,7 +15,7 @@ export default class extends Controller {
   connect() {
     this.offset = 3;
     this.hasMore = true;
-    useIntersection(this, { element: this.triggerTarget });
+    useIntersection(this, { element: this.triggerTarget, rootMargin: "2px" });
   }
 
   appear() {
