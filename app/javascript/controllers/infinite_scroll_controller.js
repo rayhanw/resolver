@@ -31,14 +31,24 @@ export default class extends Controller {
         Accept: "text/plain"
       }
     };
-    fetch(`/?offset=${this.offset}`, options)
+    let url = `/?offset=${this.offset}`;
+    if (location.search.includes("query")) {
+      const params = location.search.replace("?", "&");
+      url += params;
+    }
+
+    fetch(url, options)
       .then((response) => response.text())
       .then((data) => {
         this.listTarget.insertAdjacentHTML("beforeend", data);
         this.offset += 3;
 
         const pattern = new RegExp(`error-${this.lastErrorIdValue}`);
-        this.hasMore = !pattern.test(data);
+        if (data.length !== 0) {
+          this.hasMore = !pattern.test(data);
+        } else {
+          this.hasMore = false;
+        }
 
         if (this.hasMore) {
           this.triggerTarget.innerText = this.initialTextValue;
