@@ -12,7 +12,7 @@ COPY Gemfile.lock /app/Gemfile.lock
 
 RUN bundle install
 
-RUN rails bin/rails assets:precompile && bin/rails assets:clean
+RUN bin/rails assets:precompile && bin/rails assets:clean
 
 ENTRYPOINT ["bin/rails"]
 CMD ["server", "-b", "0.0.0.0", "-e", "production"]
