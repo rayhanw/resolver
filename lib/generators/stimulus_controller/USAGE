@@ -1,0 +1,8 @@
+Description:
+    Generates a Stimulus controller with the specified name
+
+Example:
+    bin/rails generate stimulus_controller infinite_scroll
+
+    This will create:
+        app/javascript/controllers/infinite_scroll_controller.js
