@@ -27,7 +27,7 @@ SitemapGenerator::Sitemap.create do
   Error.find_each do |error|
     # Error show page
     # [/errors/:id]
-    add error_path(error), lastmod: error.updated_at
+    add error_path(error), lastmod: error.updated_at, host: SitemapGenerator::Sitemap.default_host, changefreq: 'weekly'
   end
 
   # Docs page [/docs]
@@ -38,9 +38,9 @@ SitemapGenerator::Sitemap.create do
 
   # API/v1/errors index page
   # [/api/v1/errors]
-  add api_v1_errors_path, changefreq: 'weekly'
+  add api_v1_errors_path, changefreq: 'weekly', lastmod: error.updated_at, host: SitemapGenerator::Sitemap.default_host
 
   # API/v1/errors show page
   # [/api/v1/error]
-  add api_v1_show_api_path, changefreq: 'weekly'
+  add api_v1_show_api_path, changefreq: 'weekly', lastmod: error.updated_at, host: SitemapGenerator::Sitemap.default_host
 end
