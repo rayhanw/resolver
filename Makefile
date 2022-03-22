@@ -59,3 +59,6 @@ pin:
 
 unpin:
 	bin/importmap unpin $(arg)
+
+tasks:
+	docker-compose run web -T
