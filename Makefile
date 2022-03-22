@@ -62,3 +62,6 @@ unpin:
 
 tasks:
 	docker-compose run web -T
+
+creds:
+	docker-compose run --rm -e EDITOR=nano web credentials:edit
