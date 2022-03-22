@@ -1,6 +1,7 @@
 FROM ruby:3.1.1
 
 ENV RAILS_ENV production
+ARG DOMAIN=https://resolver.site
 
 RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
 
@@ -12,6 +13,7 @@ COPY Gemfile.lock /app/Gemfile.lock
 
 RUN bundle install
 
+RUN bin/rails sitemap:refresh
 RUN bin/rails assets:precompile && bin/rails assets:clean
 
 ENTRYPOINT ["bin/rails"]
