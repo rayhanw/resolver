@@ -13,7 +13,6 @@ COPY Gemfile.lock /app/Gemfile.lock
 
 RUN bundle install
 
-RUN bin/rails sitemap:refresh
 RUN bin/rails assets:precompile && bin/rails assets:clean
 
 ENTRYPOINT ["bin/rails"]
