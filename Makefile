@@ -12,6 +12,9 @@ seed:
 s:
 	docker-compose -f docker-compose.dev.yml up
 
+logs:
+	docker attach $(CONTAINER)
+
 up-build:
 	./bin/entrypoint.dev.sh
 
