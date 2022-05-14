@@ -22,6 +22,10 @@ module.exports = {
       },
       backgroundPosition: {
         "center-custom": "12px center"
+      },
+      screens: {
+        lg: "1280px",
+        xl: "1440px"
       }
     }
   },
