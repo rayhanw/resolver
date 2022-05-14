@@ -14,7 +14,12 @@ User.create!(
 puts "Admin created"
 
 entries.each do |entry|
-  error = Error.create!(entry)
+  if Rails.env.production?
+    attributes = { **entry, votes: 0 }
+  else
+    attributes = entry
+  end
+  error = Error.create!(attributes)
 
   puts "Error ##{error.id} created!"
 end

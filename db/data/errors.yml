@@ -1,5 +1,6 @@
 - title: undefined method `model_name` for nil:NilClass
   details: Error happens on the line of `simple_form_for [@restaurant, @review]`
+  votes: 5
   resolver: |
     ######  In restaurants/show.html.erb
     ```erb
@@ -20,6 +21,7 @@
 
 - title: undefined method `each' for nil:NilClass
   details: Error happens on the line of `@restaurants.each do |restaurant|`
+  votes: 10
   resolver: |
     ###### In restaurants/index.html.erb
     ```erb
@@ -37,6 +39,7 @@
 
 - title: undefined method `assert_valid_keys' for true:TrueClass
   details: Using `pg_search`'s `tsearch` feature and the error happens when you try to use the method you created with `pg_search_scope`
+  votes: 1
   resolver: |
     Make sure the value of `tsearch` entry is a `Hash` that contains a `prefix` with the value of `true`
     ###### In restaurant.rb
@@ -57,6 +60,7 @@
 
 - title: Images aren't uploading when using Cloudinary & ActiveStorage
   details: If you run into a problem of images not being uploaded to the service provider (e.g. Cloudinary), double check the setup. Make sure you finish all the config.
+  votes: 8
   resolver: |
     ###### In config/storage.yml
     ```rb
@@ -108,6 +112,7 @@
 
 - title: Error from first time pushing a new project to Heroku
   details: When you push a new project to Heroku for the first time and you run into an issue that says 'Your bundle only supports platforms ["arm64-darwin-21"] but your local platform is x86_64-linux'.
+  votes: 12
   resolver: |
     ```sh
     bundle lock --add-platform x86_64-linux
