@@ -1,19 +1,19 @@
 <div class="w-full text-white mb-28">
   <div class="mb-16">
-    <h1 class="font-bold text-4xl text-center mb-8">This app was created primarily for students/new Rails (or Ruby) developers</h1>
-    <p class="text-white">
+    <h1 class="font-bold text-4xl text-center mb-8 text-gray-custom dark:text-white">This app was created primarily for students/new Rails (or Ruby) developers</h1>
+    <p class="text-gray-custom dark:text-white">
       This app helps students go through common error messages/problems in their time developing apps with Rails (or Ruby)
     </p>
   </div>
 
   <section class="flex justify-center flex-col items-center mt-16">
     <%= image_tag links[:avatar], alt: "rayhanw Github avatar", class: "rounded-full object-cover h-36 w-36 mb-4" %>
-    <h2 class="font-bold text-xl">This app was created by <%= link_to "rayhanw", links[:website], target: :_blank, class: "text-gray-light underline hover:text-gray-200 transition-all duration-200" %></h2>
+    <h2 class="font-bold text-xl text-gray-custom dark:text-white">This app was created by <%= link_to "rayhanw", links[:website], target: :_blank, class: "text-gray-custom dark:text-gray-light hover:text-gray-500 dark:hover:text-gray-200 underline transition-all duration-200" %></h2>
     <div class="mt-4">
-      <h3 class="font-bold text-lg">I can be found here:</h3>
+      <h3 class="font-bold text-lg text-gray-custom dark:text-white">I can be found here:</h3>
       <ul class="list-none flex justify-center">
         <% socials.each do |social| %>
-          <li class="mx-2"><%= link_to social[:text], social[:url], target: :_blank, class: "text-gray-light underline hover:text-gray-200 transition-all duration-200" %></li>
+          <li class="mx-2"><%= link_to social[:text], social[:url], target: :_blank, class: "text-gray-custom dark:text-gray-light hover:text-gray-500 dark:hover:text-gray-200 underline transition-all duration-200" %></li>
         <% end %>
       </ul>
     </div>
