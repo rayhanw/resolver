@@ -1,5 +1,5 @@
 <div class="w-full">
-  <h1 class="font-bold text-4xl text-center mb-8 text-white">Find how to resolve your error<br />in Rails (and Ruby)</h1>
+  <h1 class="font-bold text-4xl text-center mb-8 text-gray-custom dark:text-white">Find how to resolve your error<br />in Rails (and Ruby)</h1>
 
   <form action="/" class="mb-8">
     <input
@@ -9,7 +9,7 @@
       placeholder="undefined method ..."
       style="background-image: url(<%= image_path 'search.png' %>)"
       value="<%= params[:query] %>"
-      class="bg-center-custom bg-no-repeat block bg-gray-custom w-full h-14 pl-14 placeholder:text-gray-400 pr-3 py-1.5 text-base font-normal rounded border border-gray-custom transition ease-in-out m-0 text-white"
+      class="bg-center-custom bg-no-repeat block bg-gray-200 dark:bg-gray-custom w-full h-14 pl-14 placeholder:text-slate-400 dark:placeholder:text-gray-400 pr-3 py-1.5 text-base font-normal rounded border-gray-200 shadow dark:border-gray-custom transition ease-in-out m-0 text-gray-custom dark:text-white"
     >
   </form>
 
@@ -24,15 +24,15 @@
   >
     <div data-infinite-scroll-target="list">
       <% if @errors.empty? %>
-        <h3 class="font-bold text-2xl text-white mb-8">
-          Don't see your error listed? (<%= link_to "contribute here", links[:error], target: :_blank, class: "underline hover:text-gray-300 transition-all duration-200" %>)
+        <h3 class="font-bold text-2xl text-gray-custom dark:text-white mb-8">
+          Don't see your error listed? (<%= link_to "contribute here", links[:error], target: :_blank, class: "hover:text-gray-500 dark:hover:text-gray-300 underline transition-all duration-200" %>)
         </h3>
       <% else %>
         <%= render partial: "errors/cards", locals: { errors: @errors } %>
       <% end %>
     </div>
     <div class="flex justify-center">
-      <button class="text-gray-light underline hover:text-gray-200 transition-all duration-200" data-infinite-scroll-target="trigger">Load more</button>
+      <button class="text-gray-custom dark:text-gray-light dark:hover:text-gray-500 hover:text-gray-200 underline transition-all duration-200" data-infinite-scroll-target="trigger">Load more</button>
     </div>
   </div>
 </div>
