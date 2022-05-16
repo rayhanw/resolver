@@ -1,18 +1,22 @@
 <div class="text-white w-full">
-  <h1 class="text-center font-bold text-4xl">Log in</h1>
+  <h1 class="font-bold text-4xl text-center mb-8 text-gray-custom dark:text-white">Log in</h1>
 
   <%= simple_form_for resource, as: resource_name, url: session_path(resource_name), html: { class: "w-full" } do |f| %>
     <%= f.input :email,
                 autofocus: true,
                 wrapper_html: { class: "mt-8" },
-                label_html: { class: "text-lg" },
-                input_html: { autocomplete: "email" } %>
+                label_html: { class: "text-lg text-gray-custom dark:text-white" },
+                input_html: { autocomplete: "email", class: "text-gray-custom", placeholder: "bob@test.com" } %>
     <%= f.input :password,
-                label_html: { class: "text-lg" },
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean, wrapper_html: { class: "items-center" }, input_html: { class: "mr-2" } if devise_mapping.rememberable? %>
+                label_html: { class: "text-lg text-gray-custom dark:text-white" },
+                input_html: { autocomplete: "current-password", class: "text-gray-custom", placeholder: "*******" } %>
+    <%= f.input :remember_me,
+                as: :boolean,
+                label_html: { class: "text-gray-custom dark:text-white" },
+                wrapper_html: { class: "items-center" },
+                input_html: { class: "mr-2" } if devise_mapping.rememberable? %>
 
-    <%= f.submit "Login", class: "bg-white rounded text-black px-12 py-2 cursor-pointer hover:bg-gray-300 transition-all duration-200 mt-4" %>
+    <%= f.submit "Login", class: "text-white dark:text-black bg-gray-custom dark:bg-white hover:bg-gray-500 dark:hover:bg-gray-300 rounded px-12 py-2 cursor-pointer transition-all duration-200 mt-4" %>
   <% end %>
 
   <div class="my-8">

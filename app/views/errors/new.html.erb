@@ -1,11 +1,18 @@
 <div class="text-white w-full mb-24">
-  <h1 class="text-center font-bold text-4xl">Add a new resolver</h1>
+  <h1 class="font-bold text-4xl text-center mb-8 text-gray-custom dark:text-white">Add a new resolver</h1>
   <%= simple_form_for @error, data: { turbo: false } do |f| %>
-    <%= f.input :title, wrapper_html: { class: "mt-8" }, label_html: { class: "text-lg" } %>
-    <%= f.input :details, wrapper_html: { class: "mt-8" }, label_html: { class: "text-lg" } %>
+    <%= f.input :title,
+                wrapper_html: { class: "mt-8" },
+                label_html: { class: "text-lg text-gray-custom dark:text-white" },
+                input_html: { class: "text-gray-custom" } %>
+    <%= f.input :details,
+                wrapper_html: { class: "mt-8" },
+                label_html: { class: "text-lg text-gray-custom dark:text-white" },
+                input_html: { class: "text-gray-custom" } %>
     <div class="mb-8" id="preview" data-controller="preview-text-editor">
       <%= f.input :resolver,
                   input_html: {
+                    class: "text-gray-custom",
                     data: {
                       preview_text_editor_target: "editor",
                       action: "change->preview-text-editor#fillIn"
@@ -13,11 +20,11 @@
                     rows: 10
                   },
                   wrapper_html: { class: "mt-8" },
-                  label_html: { class: "text-lg" },
+                  label_html: { class: "text-lg text-gray-custom dark:text-white" },
                   label: "Solution (Markdown is available)" %>
-      <p class="font-medium text-white text-lg">Solution Preview</p>
-      <div data-preview-text-editor-target="preview"></div>
+      <p class="font-medium text-gray-custom dark:text-white text-lg">Solution Preview</p>
+      <div data-preview-text-editor-target="preview" class="text-gray-custom dark:text-white"></div>
     </div>
-    <%= f.submit "Submit", class: "bg-white rounded text-black px-12 py-2 cursor-pointer hover:bg-gray-300 transition-all duration-200" %>
+    <%= f.submit "Submit", class: "text-white dark:text-black bg-gray-custom dark:bg-white hover:bg-gray-500 dark:hover:bg-gray-300 rounded px-12 py-2 cursor-pointer transition-all duration-200 mt-4" %>
   <% end %>
 </div>
