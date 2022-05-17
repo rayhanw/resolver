@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   root "pages#home"
   get "/about", to: "pages#about"
 
-  resources :errors, only: %i[show new create] do
+  resources :errors, only: %i[show new create edit update] do
     member do
       patch "/upvote", to: "errors#upvote"
     end
