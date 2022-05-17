@@ -1,6 +1,7 @@
 class ErrorsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[show upvote]
-  before_action :is_admin!, only: %i[new create]
+  before_action :is_admin!, only: %i[new create edit update]
+  before_action :set_error, only: %i[show edit update upvote]
 
   def show
     @error = Error.find(params[:id])
@@ -20,8 +21,18 @@ class ErrorsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @error.update(error_params)
+      redirect_to error_path(@error)
+    else
+      render :edit
+    end
+  end
+
   def upvote
-    @error = Error.find(params[:id])
     @error.upvote!
 
     if @error.save
@@ -33,6 +44,10 @@ class ErrorsController < ApplicationController
   end
 
   private
+
+  def set_error
+    @error = Error.find(params[:id])
+  end
 
   def error_params
     params.require(:error).permit(:title, :details, :resolver)
