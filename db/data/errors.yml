@@ -18,6 +18,7 @@
       @review = Review.new
     end
     ```
+  category: Rails
 
 - title: undefined method `each' for nil:NilClass
   details: Error happens on the line of `@restaurants.each do |restaurant|`
@@ -36,6 +37,7 @@
       @restaurants = Restaurant.all
     end
     ```
+  category: Rails
 
 - title: undefined method `assert_valid_keys' for true:TrueClass
   details: Using `pg_search`'s `tsearch` feature and the error happens when you try to use the method you created with `pg_search_scope`
@@ -57,6 +59,7 @@
       # [...]
     end
     ```
+  category: Rails
 
 - title: Images aren't uploading when using Cloudinary & ActiveStorage
   details: If you run into a problem of images not being uploaded to the service provider (e.g. Cloudinary), double check the setup. Make sure you finish all the config.
@@ -109,6 +112,7 @@
       # [...]
     end
     ```
+  category: Rails
 
 - title: Error from first time pushing a new project to Heroku
   details: When you push a new project to Heroku for the first time and you run into an issue that says 'Your bundle only supports platforms ["arm64-darwin-21"] but your local platform is x86_64-linux'.
@@ -120,6 +124,7 @@
     git commit -m "Add x86_64-linux platform for Heroku" # can change to any message you want
     git push heroku # You probably want to push to Github also
     ```
+  category: Rails,Heroku
 
 - title: |
     "We're sorry, but something went wrong error" on Heroku
@@ -129,3 +134,4 @@
     heroku run rails db:migrate
     # If DB migration is not the case, run `heroku logs --tail` and find the keyword `FATAL` to see what the problem is
     ```
+  category: Rails,Heroku
