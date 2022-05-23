@@ -1,6 +1,9 @@
 class Error < ApplicationRecord
   include PgSearch::Model
 
+  has_many :keywords
+  has_many :tags, through: :keywords
+
   validates :title, :details, presence: true
 
   pg_search_scope :search_by_keyword,
