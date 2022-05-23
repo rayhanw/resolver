@@ -1,5 +1,5 @@
 entries = YAML.load_file(Rails.root.join("db", "data", "errors.yml")).map { |ele| ele.transform_keys(&:to_sym) }
-tag_names = %w[Rails ActiveStorage Javascript CSS Heroku]
+tag_names = %w[Rails ActiveStorage Javascript CSS Heroku VSCode]
 
 Keyword.destroy_all
 User.destroy_all

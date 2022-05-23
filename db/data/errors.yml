@@ -135,3 +135,36 @@
     # If DB migration is not the case, run `heroku logs --tail` and find the keyword `FATAL` to see what the problem is
     ```
   category: Rails,Heroku
+
+- title: JavaScript stopped working and crashes your app
+  details: You ran `webpack-dev-server` once to live-reload your JS changes. But the next time you try to run your Rails app, you're met with an error that comes from the `javascript_pack_tag` line in `application.html.erb`. This is due to Rails no longer compiling your JS because it's expecting a `webpack-dev-server` to be ran on the side that will compile the JS changes. But since it's not run/active, JS does not get compiled, hence it errors when you try to even open http://localhost:3000
+  resolver: |
+    ```sh
+    # In terminal
+    rails webpacker:install
+    ```
+    Rails will now start compiling your JS again alongside the server itself.
+  category: Rails,Javascript
+
+- title: VSCode not opening
+  details: You're running `code .` in your Terminal and it gets stuck on downloading. This is quite specific to devs in Indonesia (might be applicable to anyone also). My running theory on why this is happening is the CDN is blocked by your ISP/government, so the download can't be processed.
+  resolver: |
+    You're trying to open VSCode with `code .` (or opening manually) and it gets stuck on "Downloading:"
+    ```sh
+    Updating VS Code Server to version da15b6fd3ef856477bf6f4fb29ba1b7af717770d
+    Removing previous installation...
+    Installing VS Code Server for x64 (da15b6fd3ef856477bf6f4fb29ba1b7af717770d)
+    Downloading:
+    ```
+    ##### Get a VPN
+  category: VSCode
+
+- title: ActiveStorage removing existing attachments
+  details: Previously attached files on an instance/entry gets removed when you attach/upload new a new file. This is a default behavior of ActiveStorage where when you upload a new file, the existing ones gets replaced. There's a setting that you can add to disable this behaviour
+  resolver: |
+    ```ruby
+    # config/application.rb
+    # add this line anywhere between the `do` ... `end`
+    config.active_storage.replace_on_assign_to_many = true
+    ```
+  category: Rails,ActiveStorage
