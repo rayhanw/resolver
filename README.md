@@ -6,9 +6,9 @@
 
 ### Stack
 
-- Rails 7.0.2.2
+- Rails 7.0.3
 - Ruby 3.1.1
-- Docker
+- Docker (Compose)
 - PostgreSQL
 - TailwindCSS
 - Makefile
