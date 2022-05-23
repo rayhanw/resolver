@@ -24,6 +24,8 @@ class PagesController < ApplicationController
 
   def about; end
 
+  def learn; end
+
   def docs
     @routes = [
       {
