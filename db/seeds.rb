@@ -25,10 +25,10 @@ end
 
 entries.each do |entry|
   tag_keyword = entry[:category]
+  entry.delete(:category)
   if Rails.env.production?
     attributes = { **entry, votes: 0 }
   else
-    entry.delete(:category)
     attributes = entry
   end
 
