@@ -18,6 +18,7 @@ class Error < ApplicationRecord
                     tsearch: { prefix: true }
                   }
   scope :by_most_popular, -> { order(votes: :DESC) }
+  scope :with_tags, -> { includes(:tags) }
 
   def solution_converted
     @solution_converted ||= pipeline.call(solution.to_plain_text)[:output].to_s
