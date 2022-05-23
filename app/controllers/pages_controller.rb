@@ -5,9 +5,9 @@ class PagesController < ApplicationController
   def home
     @last_error_id = Error.last.id
     if params[:query] && params[:query] != ""
-      @errors = Error.search_by_keyword(params[:query]).by_most_popular
+      @errors = Error.search_by_keyword(params[:query]).by_most_popular.with_tags
     else
-      @errors = Error.by_most_popular
+      @errors = Error.by_most_popular.with_tags
     end
 
     if params[:offset]
