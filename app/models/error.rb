@@ -7,7 +7,13 @@ class Error < ApplicationRecord
   validates :title, :details, presence: true
 
   pg_search_scope :search_by_keyword,
-                  against: [:title, :resolver],
+                  against: [
+                    [:title, "A"],
+                    [:resolver, "B"]
+                  ],
+                  associated_against: {
+                    tags: :name
+                  },
                   using: {
                     tsearch: { prefix: true }
                   }
