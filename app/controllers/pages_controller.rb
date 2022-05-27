@@ -13,7 +13,7 @@ class PagesController < ApplicationController
       @offset = params[:offset]
     end
 
-    @errors = @errors.accepted.offset(@offset).limit(3)
+    @errors = @errors.includes(:tags).accepted.offset(@offset).limit(3)
 
     respond_with do |format|
       format.html
