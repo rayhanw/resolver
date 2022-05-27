@@ -1,6 +1,5 @@
 class PagesController < ApplicationController
   respond_to :html, :text
-  skip_before_action :authenticate_user!
 
   def home
     @last_error_id = Error.last.id
@@ -14,7 +13,7 @@ class PagesController < ApplicationController
       @offset = params[:offset]
     end
 
-    @errors = @errors.offset(@offset).limit(3)
+    @errors = @errors.accepted.offset(@offset).limit(3)
 
     respond_with do |format|
       format.html
