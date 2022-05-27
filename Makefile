@@ -21,6 +21,9 @@ up-build:
 migrate:
 	docker-compose run web db:migrate
 
+rollback:
+	docker-compose run web db:rollback
+
 test:
 	docker container exec -t $(CONTAINER) rspec -fd
 
