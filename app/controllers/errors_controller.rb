@@ -1,6 +1,4 @@
 class ErrorsController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[show upvote]
-  before_action :is_admin!, only: %i[new create edit update]
   before_action :set_error, only: %i[show edit update upvote]
 
   def show

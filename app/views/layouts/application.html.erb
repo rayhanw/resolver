@@ -12,9 +12,13 @@
 
   <body class="bg-gray-100 dark:bg-black font-sans">
     <%= render partial: "shared/navbar" %>
-    <main class="container mx-auto mt-28 px-8 md:px-24 lg:px-80 flex justify-center">
+    <% if action_name == "new" %>
       <%= yield %>
-    </main>
+    <% else %>
+      <main class="container mx-auto mt-28 px-8 md:px-24 lg:px-80 flex justify-center">
+        <%= yield %>
+      </main>
+    <% end %>
     <% render partial: "shared/flashes" %>
     <%= render partial: "shared/footer" %>
   </body>
