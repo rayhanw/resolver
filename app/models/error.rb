@@ -4,6 +4,8 @@ class Error < ApplicationRecord
   has_many :keywords
   has_many :tags, through: :keywords
 
+  enum :status, { pending: 0, accepted: 1 }
+
   validates :title, :details, presence: true
 
   pg_search_scope :search_by_keyword,
