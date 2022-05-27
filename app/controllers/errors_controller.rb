@@ -12,6 +12,10 @@ class ErrorsController < ApplicationController
   def create
     @error = Error.new(error_params)
 
+    if user_signed_in? && current_user.admin?
+      @error.status = 1
+    end
+
     if @error.save
       redirect_to error_path(@error)
     else

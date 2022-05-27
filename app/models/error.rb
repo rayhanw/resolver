@@ -4,7 +4,7 @@ class Error < ApplicationRecord
   has_many :keywords
   has_many :tags, through: :keywords
 
-  enum :status, { pending: 0, accepted: 1 }
+  enum :status, { pending: 0, accepted: 1, rejected: 2 }
 
   validates :title, :details, presence: true
 

@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :errors, only: %i[index] do
       member do
-        patch "/accept", to: "admin/errors#accept"
+        patch "/accept", to: "errors#accept"
+        patch "/reject", to: "errors#reject"
       end
     end
   end
