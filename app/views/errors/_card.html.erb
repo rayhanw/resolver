@@ -31,8 +31,8 @@
 
   <% if user_signed_in? && current_user.admin? && error.pending? %>
     <div class="mt-8 flex gap-2">
-      <%= button_to "Accept", accept_admin_error_path(error), method: :patch, class: "transition-all duration-250 rounded px-4 py-1 text-lg bg-white text-gray-custom hover:bg-slate-200" %>
-      <%= button_to "Reject", reject_admin_error_path(error), method: :patch, class: "transition-all duration-250 rounded px-4 py-1 text-lg border text-white hover:bg-slate-200 hover:text-gray-custom" %>
+      <%= button_to "Accept", accept_admin_error_path(error), method: :patch, class: "transition-all duration-250 rounded px-4 py-1 text-lg bg-white text-gray-custom hover:bg-slate-200", data: { turbo: false } %>
+      <%= button_to "Reject", reject_admin_error_path(error), method: :patch, class: "transition-all duration-250 rounded px-4 py-1 text-lg border text-white hover:bg-slate-200 hover:text-gray-custom", data: { turbo: false } %>
     </div>
   <% end %>
 </div>
