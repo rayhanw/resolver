@@ -4,7 +4,7 @@ import hljs from "highlight.js";
 
 export default class extends Controller {
   static values = {
-    content: String,
+    content: String
   };
 
   connect() {
@@ -12,6 +12,7 @@ export default class extends Controller {
     const content = this.contentValue;
     const result = this.md.render(content);
     this.element.innerHTML = result;
+    hljs.configure({ ignoreUnescapedHTML: true });
     hljs.highlightAll();
   }
 }
