@@ -5,6 +5,15 @@ Rails.application.routes.draw do
       get "/error", to: "errors#show_api", as: :show_api
     end
   end
+
+  namespace :admin do
+    resources :errors, only: %i[index] do
+      member do
+        patch "/accept", to: "admin/errors#accept"
+      end
+    end
+  end
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   devise_for :users, skip: :registrations
   root "pages#home"
