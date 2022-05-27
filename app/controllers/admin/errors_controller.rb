@@ -5,6 +5,7 @@ class Admin::ErrorsController < ApplicationController
   def index
     @pending_errors = Error.includes(:tags).pending
     @accepted_errors = Error.includes(:tags).accepted
+    @rejected_errors = Error.includes(:tags).rejected
   end
 
   def accept

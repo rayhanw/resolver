@@ -5,8 +5,10 @@ export default class extends Controller {
   static targets = [
     "pendingTab",
     "acceptedTab",
+    "rejectedTab",
     "pendingContent",
-    "acceptedContent"
+    "acceptedContent",
+    "rejectedContent"
   ];
   static values = {
     active: String
@@ -24,22 +26,44 @@ export default class extends Controller {
       // Modify content
       this.pendingContentTarget.classList.remove("hidden");
       this.acceptedContentTarget.classList.add("hidden");
+      this.rejectedContentTarget.classList.add("hidden");
       // Modify pending tab
       this.pendingTabTarget.classList.add(...this.activeClasses);
       this.pendingTabTarget.classList.remove(...this.inactiveClasses);
       // Modify accepted tab
       this.acceptedTabTarget.classList.remove(...this.activeClasses);
       this.acceptedTabTarget.classList.add(...this.inactiveClasses);
-    } else {
+      // Modify rejected tab
+      this.rejectedTabTarget.classList.remove(...this.activeClasses);
+      this.rejectedTabTarget.classList.add(...this.inactiveClasses);
+    } else if (e.currentTarget.dataset.name === "accepted") {
       // Modify content
-      this.pendingContentTarget.classList.add("hidden");
       this.acceptedContentTarget.classList.remove("hidden");
+      this.pendingContentTarget.classList.add("hidden");
+      this.rejectedContentTarget.classList.add("hidden");
       // Modify pending tab
-      this.pendingTabTarget.classList.remove(...this.activeClasses);
       this.pendingTabTarget.classList.add(...this.inactiveClasses);
+      this.pendingTabTarget.classList.remove(...this.activeClasses);
       // Modify accepted tab
       this.acceptedTabTarget.classList.add(...this.activeClasses);
       this.acceptedTabTarget.classList.remove(...this.inactiveClasses);
+      // Modify rejected tab
+      this.rejectedTabTarget.classList.add(...this.inactiveClasses);
+      this.rejectedTabTarget.classList.remove(...this.activeClasses);
+    } else if (e.currentTarget.dataset.name === "rejected") {
+      // Modify content
+      this.rejectedContentTarget.classList.remove("hidden");
+      this.acceptedContentTarget.classList.add("hidden");
+      this.pendingContentTarget.classList.add("hidden");
+      // Modify pending tab
+      this.pendingTabTarget.classList.add(...this.inactiveClasses);
+      this.pendingTabTarget.classList.remove(...this.activeClasses);
+      // Modify accepted tab
+      this.acceptedTabTarget.classList.add(...this.inactiveClasses);
+      this.acceptedTabTarget.classList.remove(...this.activeClasses);
+      // Modify rejected tab
+      this.rejectedTabTarget.classList.add(...this.activeClasses);
+      this.rejectedTabTarget.classList.remove(...this.inactiveClasses);
     }
   }
 }

@@ -2,9 +2,10 @@
   <h1 class="font-bold text-4xl text-center mb-8 text-gray-custom dark:text-white">Errors</h1>
 
   <div data-controller="tabs" data-tabs-active-value="pending" data-tabs-active-class="bg-white text-gray-custom hover:bg-slate-200" data-tabs-inactive-class="text-white hover:text-slate-200">
-    <div class="mb-8">
+    <div class="mb-8 flex justify-center gap-4">
       <button class="mr-8 transition-all duration-250 rounded px-4 py-1 text-lg bg-white text-gray-custom hover:bg-slate-200" data-tabs-target="pendingTab" data-name="pending" data-action="click->tabs#switchTab">Pending (<%= @pending_errors.length %>)</button>
-      <button class="transition-all duration-250 rounded px-4 py-1 text-lg text-white hover:text-slate-200" data-tabs-target="acceptedTab" data-name="accepted" data-action="click->tabs#switchTab">Accepted (<%= @accepted_errors.length %>)</button>
+      <button class="mr-8 transition-all duration-250 rounded px-4 py-1 text-lg text-white hover:text-slate-200" data-tabs-target="acceptedTab" data-name="accepted" data-action="click->tabs#switchTab">Accepted (<%= @accepted_errors.length %>)</button>
+      <button class="transition-all duration-250 rounded px-4 py-1 text-lg text-white hover:text-slate-200" data-tabs-target="rejectedTab" data-name="rejected" data-action="click->tabs#switchTab">Rejected (<%= @rejected_errors.length %>)</button>
     </div>
 
     <div data-tabs-target="pendingContent">
@@ -29,6 +30,18 @@
           Accepted errors
         </h3>
         <%= render partial: "errors/cards", locals: { errors: @accepted_errors } %>
+      <% end %>
+    </div>
+    <div class="hidden" data-tabs-target="rejectedContent">
+      <% if @rejected_errors.empty? %>
+        <h3 class="font-bold text-2xl text-gray-custom dark:text-white mb-8">
+          No errors are rejected
+        </h3>
+      <% else %>
+        <h3 class="font-bold text-2xl text-gray-custom dark:text-white mb-8">
+          Rejected errors
+        </h3>
+        <%= render partial: "errors/cards", locals: { errors: @rejected_errors } %>
       <% end %>
     </div>
   </div>
