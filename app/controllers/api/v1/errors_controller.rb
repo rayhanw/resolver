@@ -1,6 +1,6 @@
 class Api::V1::ErrorsController < Api::V1::BaseController
   def index
-    @errors = Error.accepted.by_most_popular
+    @errors = Error.includes(:tags).accepted.by_most_popular
     @content = '[
   &emsp;{
     &emsp;&emsp;"id": 1,
