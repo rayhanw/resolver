@@ -4,16 +4,16 @@ class PagesController < ApplicationController
   def home
     @last_error_id = Error.last.id
     if params[:query] && params[:query] != ""
-      @errors = Error.search_by_keyword(params[:query]).by_most_popular.with_tags
+      @errors = Error.search_by_keyword(params[:query]).by_most_popular
     else
-      @errors = Error.by_most_popular.with_tags
+      @errors = Error.by_most_popular
     end
 
     if params[:offset]
       @offset = params[:offset]
     end
 
-    @errors = @errors.includes(:tags).accepted.offset(@offset).limit(3)
+    @errors = @errors.with_tags.accepted.offset(@offset).limit(3)
 
     respond_with do |format|
       format.html
