@@ -1,4 +1,6 @@
 class Tag < ApplicationRecord
+  NAMES = %w[Rails ActiveStorage Javascript CSS Heroku VSCode]
+
   validates :name, uniqueness: true
 
   has_many :keywords
