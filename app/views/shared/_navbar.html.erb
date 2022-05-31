@@ -1,4 +1,4 @@
-<nav class="bg-gray-200 dark:bg-gray-custom text-gray-light py-4 px-8 md:px-40 lg:px-96 xl:px-[32rem] flex justify-between">
+<nav class="bg-gray-200 dark:bg-gray-custom text-gray-light py-4 px-8 md:px-40 lg:px-96 flex justify-between">
   <%= link_to root_path, class: "text-lg text-gray-custom dark:text-gray-light hover:text-gray-500 dark:hover:text-gray-200 underline transition-all duration-200" do %>
     <%= image_tag "icon.png", alt: "Resolver icon - Home page", height: 32, width: 32, class: "hover:opacity-75 transition-all duration-200" %>
   <% end %>
@@ -7,5 +7,6 @@
   <%= link_to "Contribute", links[:error], target: :_blank, class: "text-lg text-gray-custom dark:text-gray-light hover:text-gray-500 dark:hover:text-gray-200 underline transition-all duration-200" %>
   <% if user_signed_in? && current_user.admin? %>
     <%= link_to "Admin", admin_errors_path, class: "text-lg text-gray-custom dark:text-gray-light hover:text-gray-500 dark:hover:text-gray-200 underline transition-all duration-200" %>
+    <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "text-lg text-gray-custom dark:text-gray-light hover:text-gray-500 dark:hover:text-gray-200 underline transition-all duration-200" %>
   <% end %>
 </nav>
