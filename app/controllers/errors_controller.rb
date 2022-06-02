@@ -23,8 +23,7 @@ class ErrorsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @error.update(error_params)
@@ -52,6 +51,6 @@ class ErrorsController < ApplicationController
   end
 
   def error_params
-    params.require(:error).permit(:title, :details, :resolver)
+    params.require(:error).permit(:title, :details, :resolver, tag_ids: [])
   end
 end
