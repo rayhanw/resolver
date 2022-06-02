@@ -1,30 +1,18 @@
-<div class="text-white w-full mb-24">
-  <h1 class="font-bold text-4xl text-center mb-8 text-gray-custom dark:text-white">Edit resolver</h1>
-  <%= simple_form_for @error, data: { turbo: false } do |f| %>
-    <%= f.input :title,
-                wrapper_html: { class: "mt-8" },
-                label_html: { class: "text-lg text-gray-custom dark:text-white" },
-                input_html: { class: "text-gray-custom" } %>
-    <%= f.input :details,
-                wrapper_html: { class: "mt-8" },
-                label_html: { class: "text-lg text-gray-custom dark:text-white" },
-                input_html: { class: "text-gray-custom" } %>
-    <div class="mb-8" id="preview" data-controller="preview-text-editor">
-      <%= f.input :resolver,
-                  input_html: {
-                    class: "text-gray-custom",
-                    data: {
-                      preview_text_editor_target: "editor",
-                      action: "change->preview-text-editor#fillIn"
-                    },
-                    rows: 10
-                  },
-                  wrapper_html: { class: "mt-8" },
-                  label_html: { class: "text-lg text-gray-custom dark:text-white" },
-                  label: "Solution (Markdown is available)" %>
-      <p class="font-medium text-gray-custom dark:text-white text-lg">Solution Preview</p>
-      <div data-preview-text-editor-target="preview" class="text-gray-custom dark:text-white" data-load="1"></div>
+<div class="mx-24 mt-8">
+  <div class="text-white w-full mb-24">
+    <h1 class="font-bold text-4xl text-center mb-8 text-gray-custom dark:text-white">Add a new resolver</h1>
+    <div class="grid grid-cols-2 gap-4 w-full" data-controller="preview-text-editor">
+      <%= render partial: "form", locals: { error: @error } %>
+
+      <div class="bg-gray-custom p-8 rounded">
+        <p class="font-medium text-gray-custom dark:text-white text-lg">Solution Preview</p>
+        <div data-preview-text-editor-target="preview" data-load="1" class="text-gray-custom dark:text-white" style="width: "></div>
+      </div>
     </div>
-    <%= f.submit "Submit", class: "text-white dark:text-black bg-gray-custom dark:bg-white hover:bg-gray-500 dark:hover:bg-gray-300 rounded px-12 py-2 cursor-pointer transition-all duration-200 mt-4" %>
-  <% end %>
+    <p class="mt-4">
+      <b>NOTE:</b> Resolvers will not be shown by default, it will have to be approved by an admin first in order to be shown in the app.<br />
+      This is done to avoid spam or unwanted content. If you've waited quite a bit of time for your error to be shown in the app,<br />
+      <%= link_to "please contact an admin here", links[:bug], class: "text-gray-custom dark:text-gray-light hover:text-gray-500 dark:hover:text-gray-200 underline transition-all duration-200", target: :_blank %>
+    </p>
+  </div>
 </div>

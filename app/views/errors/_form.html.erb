@@ -1,0 +1,31 @@
+<%= simple_form_for @error, data: { turbo: false }, html: { class: "bg-gray-custom rounded p-8" } do |f| %>
+  <%= f.input :title,
+              placeholder: "undefined method...",
+              label_html: { class: "text-lg text-gray-custom dark:text-white" },
+              input_html: { class: "text-gray-custom" } %>
+  <%= f.input :details,
+              placeholder: "More details about the error",
+              wrapper_html: { class: "mt-8" },
+              label_html: { class: "text-lg text-gray-custom dark:text-white" },
+              input_html: { class: "text-gray-custom" } %>
+  <div class="mb-8" id="preview">
+    <%= f.input :resolver,
+                placeholder: "```rb\ndef hello\n  p \"Hello\"\nend\n```",
+                input_html: {
+                  class: "text-gray-custom",
+                  data: {
+                    preview_text_editor_target: "editor",
+                    action: "change->preview-text-editor#fillIn"
+                  },
+                  rows: 10
+                },
+                wrapper_html: { class: "mt-8" },
+                label_html: { class: "text-lg text-gray-custom dark:text-white" },
+                label: "Solution (Markdown is supported)" %>
+  </div>
+  <%= f.association :tags,
+                    collection: Tag.order(:name),
+                    include_blank: false,
+                    input_html: { multiple: true, class: "text-gray-custom" } %>
+  <%= f.submit "Submit", class: "text-white dark:text-black bg-gray-custom dark:bg-white hover:bg-gray-500 dark:hover:bg-gray-300 rounded px-12 py-2 cursor-pointer transition-all duration-200 mt-4" %>
+<% end %>

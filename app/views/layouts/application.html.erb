@@ -12,7 +12,7 @@
 
   <body class="bg-gray-100 dark:bg-black font-sans">
     <%= render partial: "shared/navbar" %>
-    <% if controller_name == "errors" && action_name == "new" %>
+    <% if controller_name == "errors" && %w[new edit].include?(action_name) %>
       <%= yield %>
     <% else %>
       <main class="container mx-auto mt-8 px-8 md:px-24 lg:px-80 flex justify-center">
