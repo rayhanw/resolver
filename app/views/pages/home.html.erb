@@ -25,7 +25,7 @@
     <div data-infinite-scroll-target="list">
       <% if @errors.empty? %>
         <h3 class="font-bold text-2xl text-gray-custom dark:text-white mb-8">
-          Don't see your error listed? (<%= link_to "contribute here", links[:error], target: :_blank, class: "hover:text-gray-500 dark:hover:text-gray-300 underline transition-all duration-200" %>)
+          Don't see your error listed? (<%= link_to "contribute here", new_error_path, class: "hover:text-gray-500 dark:hover:text-gray-300 underline transition-all duration-200" %>)
         </h3>
       <% else %>
         <%= render partial: "errors/cards", locals: { errors: @errors } %>

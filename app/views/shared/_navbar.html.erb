@@ -4,7 +4,6 @@
   <% end %>
   <%= link_to "Add error", new_error_path, class: "text-lg text-gray-custom dark:text-gray-light hover:text-gray-500 dark:hover:text-gray-200 underline transition-all duration-200" %>
   <%= link_to "Learn Rails", learn_path, class: "text-lg text-gray-custom dark:text-gray-light hover:text-gray-500 dark:hover:text-gray-200 underline transition-all duration-200" %>
-  <%= link_to "Contribute", links[:error], target: :_blank, class: "text-lg text-gray-custom dark:text-gray-light hover:text-gray-500 dark:hover:text-gray-200 underline transition-all duration-200" %>
   <% if user_signed_in? && current_user.admin? %>
     <%= link_to "Admin", admin_errors_path, class: "text-lg text-gray-custom dark:text-gray-light hover:text-gray-500 dark:hover:text-gray-200 underline transition-all duration-200" %>
     <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "text-lg text-gray-custom dark:text-gray-light hover:text-gray-500 dark:hover:text-gray-200 underline transition-all duration-200" %>
