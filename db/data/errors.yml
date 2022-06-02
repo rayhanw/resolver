@@ -80,7 +80,7 @@
     ###### In config/environments/development.rb (For your own laptop/localhost environment)
 
 
-    ###### You'll want to change the following also in config/environments/production.rb (For development environment [Heroku])
+    ###### You'll want to change the following also in config/environments/production.rb (For production environment [Heroku])
     ```rb
     # [...]
     # Find the line that says `config.active_storage.service = :local`.
