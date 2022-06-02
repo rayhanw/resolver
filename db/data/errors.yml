@@ -1,6 +1,7 @@
 - title: undefined method `model_name` for nil:NilClass
   details: Error happens on the line of `simple_form_for [@restaurant, @review]`
   votes: 5
+  status: 1
   resolver: |
     ######  In restaurants/show.html.erb
     ```erb
@@ -23,6 +24,7 @@
 - title: undefined method `each' for nil:NilClass
   details: Error happens on the line of `@restaurants.each do |restaurant|`
   votes: 10
+  status: 1
   resolver: |
     ###### In restaurants/index.html.erb
     ```erb
@@ -64,6 +66,7 @@
 - title: Images aren't uploading when using Cloudinary & ActiveStorage
   details: If you run into a problem of images not being uploaded to the service provider (e.g. Cloudinary), double check the setup. Make sure you finish all the config.
   votes: 8
+  status: 1
   resolver: |
     ###### In config/storage.yml
     ```rb
@@ -117,6 +120,7 @@
 - title: Error from first time pushing a new project to Heroku
   details: When you push a new project to Heroku for the first time and you run into an issue that says 'Your bundle only supports platforms ["arm64-darwin-21"] but your local platform is x86_64-linux'.
   votes: 12
+  status: 1
   resolver: |
     ```sh
     bundle lock --add-platform x86_64-linux
@@ -129,6 +133,8 @@
 - title: |
     "We're sorry, but something went wrong error" on Heroku
   details: When you push to Heroku, you'll often see this error being displayed. One of the more common problem of this is because you might've forgotten to migrate your DB on Heroku. If this isn't the case, you'll have to do some bug hunting.
+  votes: 2
+  status: 1
   resolver: |
     ```sh
     heroku run rails db:migrate
@@ -138,6 +144,8 @@
 
 - title: JavaScript stopped working and crashes your app
   details: You ran `webpack-dev-server` once to live-reload your JS changes. But the next time you try to run your Rails app, you're met with an error that comes from the `javascript_pack_tag` line in `application.html.erb`. This is due to Rails no longer compiling your JS because it's expecting a `webpack-dev-server` to be ran on the side that will compile the JS changes. But since it's not run/active, JS does not get compiled, hence it errors when you try to even open http://localhost:3000
+  votes: 99
+  status: 1
   resolver: |
     ```sh
     # In terminal
@@ -148,6 +156,8 @@
 
 - title: VSCode not opening
   details: You're running `code .` in your Terminal and it gets stuck on downloading. This is quite specific to devs in Indonesia (might be applicable to anyone also). My running theory on why this is happening is the CDN is blocked by your ISP/government, so the download can't be processed.
+  votes: 90
+  status: 1
   resolver: |
     You're trying to open VSCode with `code .` (or opening manually) and it gets stuck on "Downloading:"
     ```sh
@@ -161,6 +171,8 @@
 
 - title: ActiveStorage removing existing attachments
   details: Previously attached files on an instance/entry gets removed when you attach/upload new a new file. This is a default behavior of ActiveStorage where when you upload a new file, the existing ones gets replaced. There's a setting that you can add to disable this behaviour
+  votes: 70
+  status: 1
   resolver: |
     ```ruby
     # config/application.rb
